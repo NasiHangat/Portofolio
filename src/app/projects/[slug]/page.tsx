@@ -49,6 +49,38 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
               </div>
             </section>
 
+            {/* --- SECTION 2: VISUAL EXPLORATION --- */}
+            <section className="space-y-8 pt-12 border-t border-zinc-900">
+              <div className="flex flex-col gap-2">
+                <h3 className="text-2xl font-bold text-white">Visual Exploration</h3>
+                <p className="text-zinc-500">Cuplikan antarmuka dan detail implementasi dari proyek ini.</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {project.screenshots && project.screenshots.length > 0 ? (
+                  project.screenshots.map((img, index) => (
+                    <div 
+                      key={index} 
+                      className="group relative aspect-video rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900/50 hover:border-zinc-700 transition-all"
+                    >
+                      <Image 
+                        src={img} 
+                        alt={`${project.title} screenshot ${index + 1}`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      {/* Overlay tipis saat hover */}
+                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  ))
+                ) : (
+                  <div className="col-span-full py-10 text-center border border-dashed border-zinc-800 rounded-2xl text-zinc-600">
+                    Pratinjau visual tambahan belum tersedia untuk proyek ini.
+                  </div>
+                )}
+              </div>
+            </section>
+
             <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-zinc-900/50 p-6 rounded-xl border border-zinc-800">
                 <h3 className="text-lg font-semibold mb-2">Tantangan</h3>

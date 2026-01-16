@@ -26,9 +26,22 @@ export const projects = [
           "Menerapkan identitas visual universitas dengan fokus pada keterbacaan, konsistensi, dan standar accessibility."
       }
     ],
-    tech: ["React Native", "Tailwind CSS"],
+    tech: ["Figma"],
     designTool: "Figma",
     image: "/upiku.png",
+    screenshots: [
+      "/upiku (2).png",
+      "/upiku2 (2).png",
+      "/upiku (3).png",
+      "/upiku (4).png",
+      "/upiku (5).png",
+      "/upiku (6).png",
+      "/upiku (7).png",
+      "/upiku (8).png",
+      "/upiku (9).png",
+      "/upiku (10).png",
+      "/upiku (11).png"
+    ],
     challenge:
       "Mengintegrasikan berbagai sistem dan data akademik universitas ke dalam satu pengalaman pengguna yang kohesif.",
     solution:
@@ -68,6 +81,20 @@ export const projects = [
     tech: ["Figma"],
     designTool: "Figma",
     image: "/dana.png",
+        screenshots: [
+      "/dana (1).png",
+      "/dana (2).png",
+      "/dana (3).png",
+      "/dana (4).png",
+      "/dana (5).png",
+      "/dana (6).png",
+      "/dana (7).png",
+      "/dana (8).png",
+      "/dana (9).png",
+      "/dana (10).png",
+      "/dana (11).png",
+      "/dana (12).png"
+    ],
     challenge:
       "Menjaga kelengkapan fitur tanpa membuat tampilan terasa rumit bagi pengguna baru.",
     solution:
