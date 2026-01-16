@@ -1,7 +1,7 @@
 import { projects } from "@/lib/data";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react"; // Tambahkan icon Github
+import { ArrowLeft, ExternalLink, Github, User } from "lucide-react"; // Tambahkan icon User
 import Link from "next/link";
 
 export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
@@ -52,9 +52,19 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
           </div>
 
           {/* Sidebar Info */}
-          <div className="space-y-8">
+          <div className="space-y-6">
+            {/* BAGIAN BARU: My Role */}
             <div className="bg-zinc-900/30 p-6 rounded-xl border border-zinc-800">
-              <h4 className="text-sm font-mono text-zinc-500 uppercase tracking-widest mb-4">Teknologi</h4>
+              <h4 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+                <User size={14} /> My Role
+              </h4>
+              <p className="text-sm text-zinc-200 font-medium">
+                {project.category} {/* Menampilkan kategori sebagai role utama */}
+              </p>
+            </div>
+
+            <div className="bg-zinc-900/30 p-6 rounded-xl border border-zinc-800">
+              <h4 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Teknologi</h4>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((t) => (
                   <span 
@@ -67,19 +77,17 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
               </div>
             </div>
             
-            <div className="flex flex-col gap-3">
-              {/* Conditional Rendering untuk Link Demo */}
+            <div className="flex flex-col gap-3 pt-4">
               {project.demoUrl && project.demoUrl !== "" && (
                 <Link 
                   href={project.demoUrl} 
                   target="_blank"
-                  className="w-full flex items-center justify-center gap-2 bg-white text-black py-4 rounded-xl font-bold hover:bg-zinc-200 transition-all shadow-lg shadow-white/5 active:scale-[0.98]"
+                  className="w-full flex items-center justify-center gap-2 bg-white text-black py-4 rounded-xl font-bold hover:bg-zinc-200 transition-all active:scale-[0.98]"
                 >
                   Lihat Demo <ExternalLink size={18} />
                 </Link>
               )}
 
-              {/* Conditional Rendering untuk Source Code */}
               {project.sourceCode && project.sourceCode !== "" && (
                 <Link 
                   href={project.sourceCode} 
