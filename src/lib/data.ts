@@ -134,6 +134,15 @@ export const projects = [
     tech: ["Figma"],
     designTool: "Figma",
     image: "/seasa.png",
+    screenshots: [
+      "/seasa (1).png",
+      "/seasa (2).png",
+      "/seasa (3).png",
+      "/seasa (4).png",
+      "/seasa (5).png",
+      "/seasa (6).png",
+      "/seasa (7).png",
+    ],
     challenge:
       "Membangun kepercayaan konsumen terhadap kualitas makanan surplus.",
     solution:

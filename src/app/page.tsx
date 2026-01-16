@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
 import ProjectCard from "@/components/ProjectCard";
 import { MapPin, GraduationCap, Briefcase } from "lucide-react";
+import { Quote } from "lucide-react";
 
 const techStack = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "PHP", "PostgreSQL", "Framer Motion"];
 
@@ -112,6 +113,68 @@ export default function HomePage() {
             </motion.div>
           ))}
         </motion.div>
+      </section>
+      
+      {/* --- SECTION: ABOUT & SOCIAL PROOF --- */}
+      <section className="max-w-7xl mx-auto py-24 px-6 border-t border-zinc-900">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          {/* Kolom Kiri: About Me (Muhammad Abdul Azis) */}
+          <div className="lg:col-span-7 space-y-8">
+            <div>
+              <h2 className="text-3xl font-bold mb-6 text-white tracking-tight">About Me</h2>
+              <div className="space-y-4 text-zinc-400 leading-relaxed text-lg">
+                <p>
+                  Halo! Saya <span className="text-white font-medium">Muhammad Abdul Azis</span>, seorang Software Engineer yang berbasis di Bandung. 
+                  Saat ini saya menempuh pendidikan di Universitas Pendidikan Indonesia, fokus pada pengembangan web dan riset teknologi.
+                </p>
+                <p>
+                  Saya memiliki ketertarikan mendalam pada ekosistem <span className="text-blue-400">Next.js</span>, manajemen database, dan optimasi sistem. 
+                  Di luar coding, saya antusias dengan kustomisasi sistem operasi Linux (Arch Linux) dan tata kelola IT menggunakan framework COBIT.
+                </p>
+              </div>
+            </div>
+
+            {/* Badge Pencapaian/Status */}
+            <div className="flex flex-wrap gap-4">
+              <div className="px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-lg text-xs font-mono text-zinc-300">
+                📍 Bandung, Indonesia
+              </div>
+              <div className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-lg text-xs font-mono text-blue-400">
+                🚀 Open for Internships
+              </div>
+            </div>
+          </div>
+
+          {/* Kolom Kanan: Testimoni / Peer Review */}
+          <div className="lg:col-span-5">
+            <div className="relative p-8 bg-zinc-900/40 border border-zinc-800 rounded-3xl overflow-hidden group">
+              <Quote className="absolute -top-4 -right-4 w-24 h-24 text-zinc-800/50 group-hover:text-blue-500/10 transition-colors" />
+              
+              <div className="relative z-10">
+                <p className="text-zinc-300 italic leading-relaxed mb-8">
+                  "Azis memiliki kemampuan luar biasa dalam menerjemahkan kebutuhan sistem yang kompleks menjadi desain yang intuitif dan kode yang rapi. Dedikasinya pada detail proyek sangat terlihat."
+                </p>
+                
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-bold text-white">
+                    PR
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white text-sm">Peer Reviewer</h4>
+                    <p className="text-xs text-zinc-500">Project Partner @ UPI</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Tambahan: Tipografi halus untuk menambah kesan "Niat" */}
+            <p className="mt-6 text-center text-xs text-zinc-600 font-mono tracking-widest uppercase">
+              Verified Competency • 2026
+            </p>
+          </div>
+
+        </div>
       </section>
 
       {/* --- CONTACT & IDENTITY FOOTER --- */}
