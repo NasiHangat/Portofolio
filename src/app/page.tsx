@@ -5,7 +5,7 @@ import { projects } from "@/lib/data";
 import ProjectCard from "@/components/ProjectCard";
 import { MapPin, GraduationCap, Briefcase, FileText, Quote } from "lucide-react";
 
-const techStack = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "PHP", "PostgreSQL", "Framer Motion", "Arch Linux", "Luau"];
+const techStack = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "PHP", "PostgreSQL", "Framer Motion", "Arch Linux", "Prisma"];
 
 export default function HomePage() {
   const [filter, setFilter] = useState("All");

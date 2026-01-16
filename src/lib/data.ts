@@ -220,7 +220,7 @@ export const projects = [
           "Optimasi aset visual dan server-side rendering."
       }
     ],
-    tech: ["Next.js", "PostgreSQL", "Tailwind"],
+    tech: ["Next.js", "PostgreSQL", "Tailwind", "Prisma"],
     designTool: "Figma",
     image: "/divus.png",
     screenshots: [
