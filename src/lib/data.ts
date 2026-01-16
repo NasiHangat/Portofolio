@@ -30,6 +30,7 @@ export const projects = [
     designTool: "Figma",
     image: "/upiku.png",
     screenshots: [
+      "/upiku.png",
       "/upiku (2).png",
       "/upiku2 (2).png",
       "/upiku (3).png",
@@ -82,6 +83,7 @@ export const projects = [
     designTool: "Figma",
     image: "/dana.png",
         screenshots: [
+          "/dana.png",
       "/dana (1).png",
       "/dana (2).png",
       "/dana (3).png",
@@ -135,6 +137,7 @@ export const projects = [
     designTool: "Figma",
     image: "/seasa.png",
     screenshots: [
+      "/seasa.png",
       "/seasa (1).png",
       "/seasa (2).png",
       "/seasa (3).png",
@@ -220,6 +223,16 @@ export const projects = [
     tech: ["Next.js", "PostgreSQL", "Tailwind"],
     designTool: "Figma",
     image: "/divus.png",
+    screenshots: [
+      "/divus.png",
+      "/divus (1).png",
+      "/divus (2).png",
+      "/divus (3).png",
+      "/divus (4).png",
+      "/divus (5).png",
+      "/divus (6).png",
+      "/divus (7).png"
+    ],
     challenge:
       "Menampilkan aset visual berat tanpa mengorbankan kecepatan.",
     solution:
@@ -296,6 +309,9 @@ export const projects = [
     tech: ["Next.js", "PostgreSQL", "React"],
     designTool: "Figma",
     image: "/foodie.png",
+    screenshots: [
+      "/foodie.png",
+    ],
     challenge:
       "Sinkronisasi pesanan dari banyak tenant dalam satu sistem.",
     solution:
