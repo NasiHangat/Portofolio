@@ -1,7 +1,7 @@
 import { projects } from "@/lib/data";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { ArrowLeft, ExternalLink, Github, User } from "lucide-react"; // Tambahkan icon User
+import { ArrowLeft, ExternalLink, Github, Workflow, UserCircle } from "lucide-react";
 import Link from "next/link";
 
 export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
@@ -13,53 +13,63 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-zinc-100 p-8">
       <div className="max-w-4xl mx-auto py-12">
-        <Link href="/" className="flex items-center gap-2 text-zinc-500 hover:text-white mb-8 transition-colors">
-          <ArrowLeft size={20} /> Kembali ke Beranda
+        <Link href="/" className="flex items-center gap-2 text-zinc-500 hover:text-white mb-8 transition-colors group">
+          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" /> Kembali ke Beranda
         </Link>
 
-        {/* Hero Image Section */}
         <div className="relative aspect-video w-full mb-12 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
-          <Image 
-            src={project.image} 
-            alt={project.title} 
-            fill 
-            className="object-cover"
-            priority 
-          />
+          <Image src={project.image} alt={project.title} fill className="object-cover" priority />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Main Content */}
-          <div className="md:col-span-2 space-y-8">
-            <div>
+          <div className="md:col-span-2 space-y-12">
+            {/* Judul & Deskripsi Utama */}
+            <section>
               <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-white to-zinc-500 bg-clip-text text-transparent">
                 {project.title}
               </h1>
-              <p className="text-xl text-zinc-400 leading-relaxed font-light">
-                {project.fullDescription}
-              </p>
-            </div>
+              <p className="text-xl text-zinc-400 leading-relaxed font-light">{project.fullDescription}</p>
+            </section>
 
-            <div className="bg-zinc-900/50 p-6 rounded-xl border border-zinc-800 backdrop-blur-sm">
-              <h3 className="text-lg font-semibold mb-2 text-zinc-200">Tantangan Utama</h3>
-              <p className="text-zinc-400 leading-relaxed">{project.challenge}</p>
-            </div>
+            {/* BAGIAN BARU: Storytelling - The Process */}
+            <section className="space-y-6">
+              <h3 className="text-2xl font-bold flex items-center gap-3">
+                <Workflow className="text-blue-500" size={24} /> The Process
+              </h3>
+              <div className="grid grid-cols-1 gap-4">
+                {project.process?.map((step, index) => (
+                  <div key={index} className="p-6 bg-zinc-900/40 rounded-xl border border-zinc-800 flex gap-6">
+                    <span className="text-4xl font-black text-zinc-800">{index + 1}</span>
+                    <div>
+                      <h4 className="font-bold text-white uppercase tracking-tighter text-sm mb-1">{step.stage}</h4>
+                      <p className="text-zinc-400 text-sm leading-relaxed">{step.details}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-            <div className="bg-blue-500/5 p-6 rounded-xl border border-blue-500/20">
-              <h3 className="text-lg font-semibold mb-2 text-blue-400">Solusi & Pendekatan</h3>
-              <p className="text-zinc-400 leading-relaxed">{project.solution}</p>
-            </div>
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-zinc-900/50 p-6 rounded-xl border border-zinc-800">
+                <h3 className="text-lg font-semibold mb-2">Tantangan</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">{project.challenge}</p>
+              </div>
+              <div className="bg-blue-500/5 p-6 rounded-xl border border-blue-500/20">
+                <h3 className="text-lg font-semibold mb-2 text-blue-400">Solusi</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">{project.solution}</p>
+              </div>
+            </section>
           </div>
 
-          {/* Sidebar Info */}
+          {/* Sidebar */}
           <div className="space-y-6">
             {/* BAGIAN BARU: My Role */}
             <div className="bg-zinc-900/30 p-6 rounded-xl border border-zinc-800">
               <h4 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 flex items-center gap-2">
-                <User size={14} /> My Role
+                <UserCircle size={14} /> Peran Saya
               </h4>
               <p className="text-sm text-zinc-200 font-medium">
-                {project.category} {/* Menampilkan kategori sebagai role utama */}
+                {project.myRole || project.category}
               </p>
             </div>
 
@@ -67,33 +77,21 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
               <h4 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Teknologi</h4>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((t) => (
-                  <span 
-                    key={t} 
-                    className="bg-zinc-800/80 border border-zinc-700 px-3 py-1 rounded-full text-xs font-medium text-zinc-300"
-                  >
+                  <span key={t} className="bg-zinc-800 border border-zinc-700 px-3 py-1 rounded-full text-xs text-zinc-300">
                     {t}
                   </span>
                 ))}
               </div>
             </div>
             
-            <div className="flex flex-col gap-3 pt-4">
-              {project.demoUrl && project.demoUrl !== "" && (
-                <Link 
-                  href={project.demoUrl} 
-                  target="_blank"
-                  className="w-full flex items-center justify-center gap-2 bg-white text-black py-4 rounded-xl font-bold hover:bg-zinc-200 transition-all active:scale-[0.98]"
-                >
+            <div className="flex flex-col gap-3">
+              {project.demoUrl && (
+                <Link href={project.demoUrl} target="_blank" className="flex items-center justify-center gap-2 bg-white text-black py-4 rounded-xl font-bold hover:bg-zinc-200 transition-all active:scale-95">
                   Lihat Demo <ExternalLink size={18} />
                 </Link>
               )}
-
-              {project.sourceCode && project.sourceCode !== "" && (
-                <Link 
-                  href={project.sourceCode} 
-                  target="_blank"
-                  className="w-full flex items-center justify-center gap-2 bg-zinc-900 border border-zinc-800 text-white py-4 rounded-xl font-bold hover:bg-zinc-800 transition-all active:scale-[0.98]"
-                >
+              {project.sourceCode && (
+                <Link href={project.sourceCode} target="_blank" className="flex items-center justify-center gap-2 bg-zinc-900 border border-zinc-800 text-white py-4 rounded-xl font-bold hover:bg-zinc-800 transition-all active:scale-95">
                   Source Code <Github size={18} />
                 </Link>
               )}

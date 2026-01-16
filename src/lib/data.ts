@@ -3,104 +3,267 @@ export const projects = [
     id: 1,
     slug: "upiku",
     title: "UPIku",
-    description: "Super Apps terintegrasi yang menyatukan seluruh informasi bagi civitas akademika Universitas Pendidikan Indonesia.",
-    fullDescription: "UPIku dirancang untuk menyentralisasi layanan akademik, mulai dari jadwal kuliah hingga informasi kegiatan mahasiswa, dalam satu platform mobile yang intuitif.",
+    category: "UI/UX Design",
+    myRole: "UI/UX Designer & Researcher",
+    description:
+      "Super Apps terintegrasi yang menyatukan seluruh informasi bagi civitas akademika Universitas Pendidikan Indonesia.",
+    fullDescription:
+      "UPIku dirancang sebagai super app kampus untuk menyentralisasi layanan akademik seperti jadwal kuliah, KRS, pengumuman, dan aktivitas mahasiswa dalam satu aplikasi mobile yang mudah diakses.",
+    process: [
+      {
+        stage: "Discovery",
+        details:
+          "Melakukan riset terhadap mahasiswa UPI untuk mengidentifikasi kendala akses informasi akademik yang tersebar di banyak sistem."
+      },
+      {
+        stage: "User Flow",
+        details:
+          "Merancang alur navigasi terpusat yang menghubungkan KRS, jadwal, dan informasi kampus dalam satu pengalaman yang konsisten."
+      },
+      {
+        stage: "Visual Design",
+        details:
+          "Menerapkan identitas visual universitas dengan fokus pada keterbacaan, konsistensi, dan standar accessibility."
+      }
+    ],
     tech: ["React Native", "Tailwind CSS"],
     designTool: "Figma",
-    category: "UI/UX Design",
     image: "/upiku.png",
-    challenge: "Mengintegrasikan berbagai pangkalan data universitas yang berbeda ke dalam satu alur pengguna yang kohesif.",
-    solution: "Implementasi arsitektur sistem modular dan desain antarmuka berbasis user-centered untuk memastikan kemudahan navigasi bagi mahasiswa dan dosen.",
-    demoUrl: "https://www.figma.com/proto/AHxMGl5FeXJpJJbdFWEHeo/UI?page-id=6%3A4&node-id=128-3017&p=f&viewport=595%2C449%2C0.12&t=c2Fy3RWe9YNmn4Nx-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=128%3A3173", // Link ke Prototype Figma
-    sourceCode: "" // Kosongkan jika tidak ada/private
+    challenge:
+      "Mengintegrasikan berbagai sistem dan data akademik universitas ke dalam satu pengalaman pengguna yang kohesif.",
+    solution:
+      "Pendekatan user-centered design dan sistem modular untuk memastikan navigasi tetap sederhana meskipun fitur kompleks.",
+    demoUrl:
+      "https://www.figma.com/proto/AHxMGl5FeXJpJJbdFWEHeo/UI?page-id=6%3A4&node-id=128-3017&p=f",
+    sourceCode: ""
   },
+
   {
     id: 2,
     slug: "redesign-dana",
     title: "Redesign DANA",
-    description: "Eksplorasi desain antarmuka dompet digital DANA untuk meningkatkan efisiensi transaksi dan kenyamanan navigasi pengguna.",
-    fullDescription: "Proyek ini fokus pada penyederhanaan langkah transaksi dan pembersihan elemen visual yang mengganggu konsentrasi pengguna saat melakukan pembayaran cepat.",
+    category: "UI/UX Design",
+    myRole: "UI/UX Designer",
+    description:
+      "Eksplorasi redesign aplikasi dompet digital DANA untuk meningkatkan efisiensi transaksi dan kenyamanan navigasi.",
+    fullDescription:
+      "Proyek eksploratif yang berfokus pada penyederhanaan proses pembayaran dan peningkatan kejelasan visual agar pengguna dapat bertransaksi lebih cepat dan minim kesalahan.",
+    process: [
+      {
+        stage: "Problem Analysis",
+        details:
+          "Menganalisis pain point pengguna terkait tampilan yang padat dan langkah transaksi yang terlalu panjang."
+      },
+      {
+        stage: "Wireframing",
+        details:
+          "Menyusun ulang struktur halaman utama dan transaksi dengan fokus pada fitur paling sering digunakan."
+      },
+      {
+        stage: "UI Refinement",
+        details:
+          "Menerapkan visual hierarchy yang lebih tegas untuk meningkatkan fokus pengguna saat melakukan pembayaran."
+      }
+    ],
     tech: ["Figma"],
     designTool: "Figma",
-    category: "UI/UX Design",
     image: "/dana.png",
-    challenge: "Menjaga fungsionalitas fitur yang kaya tanpa membuat tampilan terlihat penuh dan membingungkan pengguna baru.",
-    solution: "Menggunakan prinsip visual hierarchy yang lebih ketat dan pengelompokan fitur berdasarkan frekuensi penggunaan.",
-    demoUrl: "https://www.figma.com/proto/h7qsOiLrjT6bx30XmhR44a/kelompok-8---HCI?page-id=80%3A2&node-id=86-2&p=f&viewport=446%2C270%2C0.15&t=m1Zj2GCmg0LwrtWN-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=86%3A2&show-proto-sidebar=1",
+    challenge:
+      "Menjaga kelengkapan fitur tanpa membuat tampilan terasa rumit bagi pengguna baru.",
+    solution:
+      "Pengelompokan fitur berdasarkan frekuensi penggunaan dan pengurangan elemen visual yang tidak esensial.",
+    demoUrl:
+      "https://www.figma.com/proto/h7qsOiLrjT6bx30XmhR44a/kelompok-8---HCI",
     sourceCode: ""
   },
+
   {
     id: 3,
     slug: "seasa",
     title: "Seasa",
-    description: "Inovasi platform marketplace makanan untuk mengurangi limbah pangan (food waste) dengan sistem penjualan stok surplus dari restoran.",
-    fullDescription: "Seasa menghubungkan restoran yang memiliki stok makanan berlebih di akhir hari dengan konsumen yang mencari makanan berkualitas dengan harga terjangkau.",
+    category: "UI/UX Design",
+    myRole: "Product Designer",
+    description:
+      "Platform marketplace makanan untuk mengurangi food waste melalui penjualan stok surplus restoran.",
+    fullDescription:
+      "Seasa menghubungkan restoran dengan stok makanan berlebih di akhir hari kepada konsumen yang ingin mendapatkan makanan berkualitas dengan harga terjangkau.",
+    process: [
+      {
+        stage: "Ideation",
+        details:
+          "Mengembangkan konsep marketplace berbasis isu lingkungan dan keberlanjutan pangan."
+      },
+      {
+        stage: "UX Strategy",
+        details:
+          "Merancang sistem kepercayaan melalui rating, informasi stok real-time, dan transparansi mitra."
+      },
+      {
+        stage: "UI Design",
+        details:
+          "Mendesain tampilan yang ramah dan informatif untuk meningkatkan rasa aman pengguna."
+      }
+    ],
     tech: ["Figma"],
     designTool: "Figma",
-    category: "UI/UX Design",
     image: "/seasa.png",
-    challenge: "Membangun kepercayaan pengguna terhadap kualitas makanan surplus melalui sistem rating dan transparansi informasi.",
-    solution: "Menambahkan fitur real-time inventory dan sertifikasi toko mitra untuk menjamin keamanan pangan.",
-    demoUrl: "https://www.figma.com/proto/NIndJ6ngBKGQ6pnNttYUSK/SEASA?page-id=0%3A1&node-id=5-238&p=f&viewport=747%2C385%2C0.17&t=KUcZs4EbAe4Ew0ZO-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5%3A238&show-proto-sidebar=1",
+    challenge:
+      "Membangun kepercayaan konsumen terhadap kualitas makanan surplus.",
+    solution:
+      "Sistem rating, sertifikasi mitra, dan informasi stok real-time pada setiap produk.",
+    demoUrl:
+      "https://www.figma.com/proto/NIndJ6ngBKGQ6pnNttYUSK/SEASA",
     sourceCode: ""
   },
+
   {
     id: 4,
     slug: "ngajar-id",
     title: "Ngajar.ID",
-    description: "Platform Learning Management System (LMS) berbasis modul yang dilengkapi fitur donasi mikro untuk apresiasi terhadap pengajar.",
-    fullDescription: "Sebuah ekosistem belajar online yang memungkinkan pengajar independen membagikan materi berkualitas dan mendapatkan dukungan finansial langsung dari komunitas.",
+    category: "Web Development",
+    myRole: "Full Stack Developer",
+    description:
+      "Platform LMS berbasis modul dengan fitur donasi mikro untuk mendukung pengajar independen.",
+    fullDescription:
+      "Ngajar.ID adalah ekosistem pembelajaran online yang memungkinkan pengajar membagikan materi edukatif sekaligus menerima apresiasi finansial langsung dari pengguna.",
+    process: [
+      {
+        stage: "System Design",
+        details:
+          "Merancang arsitektur LMS modular dengan manajemen user, modul, dan transaksi."
+      },
+      {
+        stage: "Development",
+        details:
+          "Mengimplementasikan frontend dan backend dengan fokus pada performa dan keamanan data."
+      },
+      {
+        stage: "Integration",
+        details:
+          "Integrasi sistem donasi dan token untuk mendukung monetisasi konten."
+      }
+    ],
     tech: ["PHP", "React", "Tailwind"],
     designTool: "Figma",
-    category: "Web Development",
     image: "/android-compact-1.png",
-    challenge: "Mengelola aliran data donasi yang aman sambil tetap memberikan pengalaman belajar yang mulus.",
-    solution: "Integrasi sistem payment gateway dan pengelolaan state yang efisien untuk melacak progres modul pembelajaran secara real-time.",
+    challenge:
+      "Menjaga keamanan aliran donasi tanpa mengganggu pengalaman belajar.",
+    solution:
+      "Pengelolaan state dan sistem transaksi terpisah untuk modul dan donasi.",
     demoUrl: "",
     sourceCode: "https://github.com/NasiHangat/Ngajar.id"
   },
+
   {
     id: 5,
     slug: "divus-global",
     title: "PT Divus Global Mediacomm",
-    description: "Transformasi digital profil perusahaan melalui website yang dinamis, responsif, dan dioptimalkan untuk performa tinggi.",
-    fullDescription: "Membangun identitas digital yang profesional untuk perusahaan media guna menarik mitra bisnis global melalui performa web yang cepat dan SEO friendly.",
+    category: "Web Development",
+    myRole: "Backend Developer",
+    description:
+      "Website company profile modern yang dioptimalkan untuk performa dan SEO.",
+    fullDescription:
+      "Transformasi identitas digital perusahaan media melalui website yang cepat, responsif, dan siap menjangkau mitra global.",
+    process: [
+      {
+        stage: "Planning",
+        details:
+          "Menentukan struktur konten dan kebutuhan performa website perusahaan."
+      },
+      {
+        stage: "Implementation",
+        details:
+          "Pengembangan menggunakan Next.js dengan fokus pada SEO dan load time."
+      },
+      {
+        stage: "Optimization",
+        details:
+          "Optimasi aset visual dan server-side rendering."
+      }
+    ],
     tech: ["Next.js", "PostgreSQL", "Tailwind"],
     designTool: "Figma",
-    category: "Web Development",
     image: "/divus.png",
-    challenge: "Menampilkan aset visual yang berat tanpa mengorbankan waktu pemuatan halaman (load time).",
-    solution: "Optimasi gambar otomatis menggunakan Next.js Image dan implementasi Server-Side Rendering (SSR) untuk kecepatan maksimal.",
+    challenge:
+      "Menampilkan aset visual berat tanpa mengorbankan kecepatan.",
+    solution:
+      "Next.js Image Optimization dan SSR.",
     demoUrl: "https://www.divusglobal.com/",
     sourceCode: "https://github.com/dadunch/next-divus"
   },
+
   {
     id: 6,
     slug: "cultunesia",
     title: "Cultunesia",
-    description: "Platform edukasi budaya interaktif dengan fitur pemetaan geografis provinsi dan gamifikasi kuis untuk melestarikan budaya Indonesia.",
-    fullDescription: "Aplikasi web edukatif yang mengajak pengguna menjelajahi kekayaan budaya Indonesia melalui peta interaktif dan tantangan pengetahuan yang seru.",
+    category: "Web Development",
+    myRole: "Frontend Developer",
+    description:
+      "Platform edukasi budaya interaktif berbasis peta dan gamifikasi.",
+    fullDescription:
+      "Cultunesia mengajak pengguna menjelajahi budaya Indonesia melalui peta interaktif, konten edukatif, dan kuis berbasis provinsi.",
+    process: [
+      {
+        stage: "Concept",
+        details:
+          "Menggabungkan edukasi budaya dengan elemen interaktif dan gamifikasi."
+      },
+      {
+        stage: "Development",
+        details:
+          "Membangun antarmuka peta interaktif yang ringan."
+      },
+      {
+        stage: "Enhancement",
+        details:
+          "Menambahkan animasi untuk meningkatkan engagement pengguna."
+      }
+    ],
     tech: ["Next.js", "PostgreSQL", "Framer Motion"],
     designTool: "Figma",
-    category: "Web Development",
     image: "/cultunesia.png",
-    challenge: "Membuat peta interaktif yang ringan dan responsif di berbagai perangkat mobile.",
-    solution: "Menggunakan library animasi Framer Motion untuk transisi peta yang halus dan database PostgreSQL untuk manajemen konten kuis yang dinamis.",
+    challenge:
+      "Membuat peta interaktif yang tetap ringan di perangkat mobile.",
+    solution:
+      "Optimalisasi animasi dan manajemen data yang efisien.",
     demoUrl: "https://cultunesia.vercel.app",
     sourceCode: "https://github.com/ryan-gabriel/cultunesia"
   },
+
   {
     id: 7,
     slug: "foodie-pos",
     title: "Foodie POS",
-    description: "Sistem Point of Sales (POS) berbasis QR Code untuk efisiensi pemesanan multi-tenant pada ekosistem foodcourt.",
-    fullDescription: "Solusi digital untuk manajemen pesanan di area kantin besar, memungkinkan pelanggan memesan dari berbagai kedai hanya melalui satu scan QR di meja.",
+    category: "Web Development",
+    myRole: "Full Stack Developer",
+    description:
+      "Sistem POS berbasis QR Code untuk pemesanan multi-tenant di foodcourt.",
+    fullDescription:
+      "Foodie POS memungkinkan pelanggan memesan dari berbagai tenant hanya dengan satu QR Code, sementara sistem otomatis memisahkan transaksi tiap tenant.",
+    process: [
+      {
+        stage: "Requirement Analysis",
+        details:
+          "Menganalisis kebutuhan multi-tenant dan sistem pembayaran terpusat."
+      },
+      {
+        stage: "System Architecture",
+        details:
+          "Merancang database relasional untuk pemisahan transaksi tenant."
+      },
+      {
+        stage: "Implementation",
+        details:
+          "Pengembangan sistem pemesanan dan pembayaran terintegrasi."
+      }
+    ],
     tech: ["Next.js", "PostgreSQL", "React"],
     designTool: "Figma",
-    category: "Web Development",
     image: "/foodie.png",
-    challenge: "Sinkronisasi pesanan antar tenant yang berbeda dalam satu sistem pembayaran tunggal.",
-    solution: "Arsitektur database relasional yang kompleks untuk memisahkan pendapatan per tenant secara otomatis saat transaksi berhasil.",
+    challenge:
+      "Sinkronisasi pesanan dari banyak tenant dalam satu sistem.",
+    solution:
+      "Desain database relasional dan logika transaksi otomatis.",
     demoUrl: "",
     sourceCode: "https://github.com/dadunch/foodie-next"
   }
