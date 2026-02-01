@@ -1,53 +1,81 @@
 "use client"
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link"; 
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
-export default function ProjectCard({ project }: { project: any }) {
+interface Project {
+  id: number;
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  image: string;
+  tech: string[];
+}
+
+export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <Link href={`/projects/${project.slug}`}>
+    <Link href={`/projects/${project.slug}`} className="group block h-full">
       <motion.div 
-        whileHover={{ y: -5 }}
-        className="group bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden cursor-pointer h-full flex flex-col"
+        whileHover={{ y: -8 }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="bg-zinc-900/40 border border-zinc-800/80 rounded-2xl overflow-hidden h-full flex flex-col hover:border-zinc-700 transition-colors duration-300"
       >
-        {/* Container Image  */}
-        <div className="aspect-video relative overflow-hidden bg-zinc-800">
+        {/* Image Container */}
+        <div className="aspect-video relative overflow-hidden bg-zinc-800/50">
           <Image 
             src={project.image} 
             alt={project.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             priority={project.id <= 3} 
           />
-          {/* Overlay gelap saat hover agar teks lebih pop */}
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+          
+          {/* Hover Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          
+          {/* Arrow Icon on Hover */}
+          <div className="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0 translate-x-2">
+            <ArrowUpRight size={18} className="text-white" strokeWidth={2} />
+          </div>
         </div>
 
         {/* Content Section */}
-        <div className="p-5 flex flex-col flex-grow">
-          <span className="text-[10px] font-mono text-blue-500 uppercase tracking-widest font-semibold">
-            {project.category}
-          </span>
+        <div className="p-6 flex flex-col flex-grow space-y-4">
+          {/* Category Badge */}
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-medium text-zinc-500 uppercase tracking-widest">
+              {project.category}
+            </span>
+          </div>
           
-          <h3 className="text-xl font-bold mt-1 text-white group-hover:text-blue-400 transition-colors">
+          {/* Title */}
+          <h3 className="text-xl font-semibold text-white group-hover:text-zinc-200 transition-colors leading-tight">
             {project.title}
           </h3>
           
-          <p className="text-zinc-400 text-sm mt-2 line-clamp-2">
+          {/* Description */}
+          <p className="text-zinc-400 text-sm leading-relaxed line-clamp-2 flex-grow">
             {project.description}
           </p>
           
           {/* Tech Stack Tags */}
-          <div className="flex flex-wrap gap-2 mt-auto pt-4">
-            {project.tech.map((t: string) => (
+          <div className="flex flex-wrap gap-2 pt-2">
+            {project.tech.slice(0, 4).map((t: string) => (
               <span 
                 key={t} 
-                className="text-[10px] bg-zinc-800 border border-zinc-700 px-2 py-1 rounded text-zinc-300"
+                className="text-xs font-medium bg-zinc-800/60 border border-zinc-700/60 px-3 py-1.5 rounded-full text-zinc-300 transition-colors hover:bg-zinc-700/60"
               >
                 {t}
               </span>
             ))}
+            {project.tech.length > 4 && (
+              <span className="text-xs font-medium text-zinc-500 px-2 py-1.5">
+                +{project.tech.length - 4}
+              </span>
+            )}
           </div>
         </div>
       </motion.div>
