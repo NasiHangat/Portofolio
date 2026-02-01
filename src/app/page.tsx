@@ -10,7 +10,23 @@ const techStack = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "P
 export default function HomePage() {
   const [filter, setFilter] = useState("All");
   const categories = ["All", "Web Development", "UI/UX Design"];
-
+  const technicalSkills = [
+  { name: "TailwindCSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+  { name: "HTML5", icon: "https://cdn.simpleicons.org/html5/E34F26" },
+  { name: "CSS3", icon: "https://cdn.simpleicons.org/css3/1572B6" },
+  { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+  { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+  { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+  { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/white" },
+  { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
+  { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A24A" },
+  { name: "Git", icon: "https://cdn.simpleicons.org/git/F05032" },
+  { name: "Laravel", icon: "https://cdn.simpleicons.org/laravel/FF2D20" },
+  { name: "Go", icon: "https://cdn.simpleicons.org/go/00ADD8" },
+  { name: "FastAPI", icon: "https://cdn.simpleicons.org/fastapi/009688" },
+  { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
+  { name: "Postman", icon: "https://cdn.simpleicons.org/postman/FF6C37" },
+];
   const filteredProjects = filter === "All" 
     ? projects 
     : projects.filter(p => p.category === filter);
@@ -130,7 +146,40 @@ export default function HomePage() {
           ))}
         </motion.div>
       </section>
-      
+      {/* --- SECTION: TECHNICAL SKILLS --- */}
+      <section className="max-w-7xl mx-auto py-24 px-6 border-t border-zinc-900">
+        <div className="flex flex-col gap-12">
+          <div className="space-y-2">
+            <div className="h-1.5 w-16 bg-emerald-500 mb-4" />
+            <h2 className="text-4xl font-bold text-white tracking-tight">Technical Skills</h2>
+            <p className="text-zinc-500 text-lg">Teknologi dan tools yang saya gunakan untuk membangun solusi digital.</p>
+          </div>
+
+          {/* Skill Cloud Container */}
+          <div className="flex flex-wrap justify-center md:justify-start gap-4 lg:gap-6">
+            {technicalSkills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="flex items-center gap-3 px-6 py-3 bg-zinc-900/50 border border-zinc-800 rounded-full hover:border-zinc-600 hover:bg-zinc-800/80 transition-all cursor-default shadow-lg"
+              >
+                <img 
+                  src={skill.icon} 
+                  alt={skill.name} 
+                  className="w-5 h-5 object-contain"
+                />
+                <span className="text-sm font-medium text-zinc-300 group-hover:text-white">
+                  {skill.name}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* --- SECTION: ABOUT & SOCIAL PROOF --- */}
       <section className="max-w-7xl mx-auto py-32 px-6 border-t border-zinc-900">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
