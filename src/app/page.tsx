@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "@/lib/data";
 import ProjectCard from "@/components/ProjectCard";
-import { FileText, ArrowUpRight } from "lucide-react";
+import { FileText, ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
 import PeerReviewForm from "@/components/PeerReviewForm";
 
 // --- Skills Configuration ---
@@ -77,7 +77,6 @@ export default function HomePage() {
   const [time, setTime] = useState<string>("");
   const categories = ["All", "Web Development", "UI/UX Design"];
 
-  // Fetch data review dari database Neon
   useEffect(() => {
     const fetchReviews = async () => {
       try {
@@ -95,7 +94,6 @@ export default function HomePage() {
     fetchReviews();
   }, []);
 
-  // Update waktu lokal untuk menghindari Hydration Mismatch
   useEffect(() => {
     const updateTime = () => {
       setTime(new Date().toLocaleTimeString([], { 
@@ -274,9 +272,27 @@ export default function HomePage() {
               Let's collaborate on<br/>
               <span className="text-zinc-500">something remarkable</span>
             </h3>
-            <a href="mailto:muhammadabdulazis747@gmail.com" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-zinc-200 transition-all">
-              Start a Conversation <ArrowUpRight size={18} />
-            </a>
+            <div className="flex flex-wrap gap-4">
+              <a href="mailto:muhammadabdulazis747@gmail.com" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-zinc-200 transition-all">
+                <Mail size={18} /> Email Me
+              </a>
+              <div className="flex gap-2">
+                <a 
+                  href="https://github.com/NasiHangat" 
+                  target="_blank"
+                  className="p-4 bg-zinc-900 border border-zinc-800 rounded-full hover:bg-zinc-800 transition-colors"
+                >
+                  <Github size={20} />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/muhamad-azis-8493001a0/" 
+                  target="_blank"
+                  className="p-4 bg-zinc-900 border border-zinc-800 rounded-full hover:bg-zinc-800 transition-colors"
+                >
+                  <Linkedin size={20} />
+                </a>
+              </div>
+            </div>
           </div>
           <div className="lg:col-span-5 text-right">
             <div className="text-xs text-zinc-600 font-mono tracking-widest uppercase space-y-2">
