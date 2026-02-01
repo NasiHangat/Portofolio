@@ -1,0 +1,20 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model PeerReview {
+  id         String   @id @default(cuid())
+  name       String
+  role       String
+  project    String?
+  message    String   @db.Text
+  isApproved Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://porto-muh-abdul-azis.vercel.app/"),
   title: "Muhammad Abdul Azis | Software Engineer Portfolio",
   description: "Software Engineer & Student at Universitas Pendidikan Indonesia. Specializing in Next.js, UI/UX Design, and IT Governance.",
   keywords: ["Muhammad Abdul Azis", "Aziss", "Software Engineer Bandung", "UPI Student", "Next.js Developer", "UI/UX Designer Indonesia"],
