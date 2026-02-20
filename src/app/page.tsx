@@ -6,7 +6,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { FileText, ArrowUpRight, Github, Linkedin, Cpu, Layout, User, Globe } from "lucide-react";
 import PeerReviewForm from "@/components/PeerReviewForm";
 
-// Gabungan semua tech stack dari konfigurasi sebelumnya
+// Gabungan semua tech stack
 const allSkills = [
   { name: "HTML5", icon: "https://cdn.simpleicons.org/html5/E34F26" },
   { name: "CSS3", icon: "https://cdn.simpleicons.org/css3/1572B6" },
@@ -34,7 +34,7 @@ export default function HomePage() {
   const [time, setTime] = useState<string>("");
   const [filter, setFilter] = useState("All");
 
-  const categories = ["All", "Web Development", "UI/UX Design"]; // Disamakan persis dengan data kategori di lib/data.ts
+  const categories = ["All", "Web Development", "UI/UX Design"];
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -62,7 +62,6 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
-  // Logika filter yang disempurnakan
   const filteredProjects = filter === "All" 
     ? projects 
     : projects.filter(p => p.category === filter);
@@ -71,9 +70,8 @@ export default function HomePage() {
     <main className="min-h-screen bg-[#050505] text-white p-4 md:p-8 font-sans selection:bg-lime-400 selection:text-black">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-4">
         
-        {/* 1. HERO BLOCK - DIOPTIMALKAN */}
+        {/* 1. HERO BLOCK */}
         <div className="md:col-span-8 bg-[#0A0A0A] border border-zinc-800/50 rounded-3xl p-8 md:p-12 flex flex-col justify-between min-h-[450px] relative overflow-hidden group">
-          {/* Aksen background subtle */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-lime-400/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           
           <div className="z-10">
@@ -82,13 +80,11 @@ export default function HomePage() {
               <span className="font-mono text-[10px] tracking-widest uppercase text-lime-400">Available for Opportunities</span>
             </div>
             
-            {/* Nama diperbesar */}
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tighter mb-4 uppercase">
               MUHAMMAD<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-600">ABDUL AZIS</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-600">ABDUL AZIS.</span>
             </h1>
             
-            {/* Role dipertegas */}
             <h2 className="text-xl md:text-2xl text-lime-400 font-medium tracking-tight mb-8 font-mono">
               SOFTWARE ENGINEER.
             </h2>
@@ -114,7 +110,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* 2. DOWNLOAD CV BLOCK (Pindah ke atas kanan untuk keseimbangan) */}
+        {/* 2. DOWNLOAD CV BLOCK */}
         <div className="md:col-span-4 bg-[#0A0A0A] border border-zinc-800/50 rounded-3xl p-1 flex flex-col gap-1 min-h-[450px]">
           <a 
             href="/cv-muhammad-abdul-azis.pdf" 
@@ -128,12 +124,13 @@ export default function HomePage() {
               </div>
             </div>
             <div>
-              <span className="text-black text-4xl lg:text-5xl font-black leading-[0.9] tracking-tighter italic">DOWNLOAD<br/>RÉSUMÉ</span>
+              {/* Teks DOWNLOAD RÉSUMÉ menggunakan font Helvetica secara spesifik */}
+              <span className="text-black text-4xl lg:text-5xl font-black leading-[0.9] tracking-tighter italic font-['Helvetica_Neue',_Helvetica,_Arial,_sans-serif]">DOWNLOAD<br/>RESUME</span>
             </div>
           </a>
         </div>
 
-        {/* 3. EXPERTISE BLOCK (MENGGUNAKAN SEMUA TECH STACK) */}
+        {/* 3. EXPERTISE BLOCK */}
         <div className="md:col-span-12 bg-[#0A0A0A] border border-zinc-800/50 rounded-3xl p-8 md:p-12">
           <div className="flex flex-col md:flex-row gap-12 items-start">
             <div className="md:w-1/3 shrink-0">
@@ -158,7 +155,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* 4. SELECTED WORKS (Span 12) */}
+        {/* 4. SELECTED WORKS */}
         <div className="md:col-span-12 bg-[#0A0A0A] border border-zinc-800/50 rounded-3xl p-8 md:p-12">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-6">
             <div>
@@ -173,7 +170,7 @@ export default function HomePage() {
             <div className="bg-zinc-950 p-1.5 rounded-full border border-zinc-800/50 flex flex-wrap gap-1">
               {categories.map(cat => {
                 const isSelected = filter === cat;
-                const displayName = cat === "Web Development" ? "Web" : cat; // Memendekkan nama untuk tombol
+                const displayName = cat === "Web Development" ? "Web" : cat;
                 return (
                   <button 
                     key={cat} 
