@@ -57,13 +57,20 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                </div>
                <p className="text-xl font-bold text-lime-400">{project.myRole || project.category}</p>
             </div>
-            <div className="bg-lime-400 rounded-3xl p-8 flex flex-col justify-between group cursor-pointer active:scale-[0.98] transition-transform">
+            
+            <a 
+              href={project.demoUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-lime-400 rounded-3xl p-8 flex flex-col justify-between group cursor-pointer active:scale-[0.98] transition-transform block"
+            >
               <div className="flex justify-between items-start text-black">
                 <span className="font-bold uppercase text-[10px] tracking-widest">Live Preview</span>
                 <ExternalLink size={18} />
               </div>
-              <a href={project.demoUrl} target="_blank" className="text-black text-2xl font-black italic tracking-tighter leading-none">LAUNCH PROJECT</a>
-            </div>
+              {/* Teksnya diubah menjadi span biasa karena a tag sudah di luar */}
+              <span className="text-black text-2xl font-black italic tracking-tighter leading-none">LAUNCH PROJECT</span>
+            </a>
           </div>
         </div>
 
