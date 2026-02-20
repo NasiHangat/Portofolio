@@ -41,103 +41,87 @@ export default function PeerReviewForm() {
   };
 
   return (
-    <div className="space-y-12">
-      {/* Header Form */}
-      <div className="space-y-6">
-        <div className="flex items-center gap-4">
-          <div className="h-px w-12 bg-zinc-800" />
-          <span className="text-xs font-medium text-zinc-500 tracking-widest uppercase">Contribution</span>
-        </div>
-        <h3 className="font-display text-4xl md:text-5xl font-medium text-white">
-          Submit a Review
-        </h3>
-        <p className="text-zinc-400 text-lg leading-relaxed max-w-md">
-          Professional feedback helps document our shared technical journey at UPI and beyond.
-        </p>
-      </div>
-
-      {/* Form Area */}
-      <form onSubmit={handleSubmit} className="space-y-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="space-y-3">
-            <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
-              Full Name & Role
-            </label>
-            <input 
-              type="text" 
-              name="name"
-              placeholder="e.g. Budi — Backend Partner"
-              required
-              disabled={status === "loading"}
-              className="w-full bg-transparent border-b border-zinc-800 py-4 text-white focus:border-white outline-none transition-colors placeholder:text-zinc-700 disabled:opacity-50"
-            />
-          </div>
-
-          <div className="space-y-3">
-            <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
-              Project Context
-            </label>
-            <input 
-              type="text" 
-              name="project"
-              placeholder="e.g. UPIku Super Apps"
-              disabled={status === "loading"}
-              className="w-full bg-transparent border-b border-zinc-800 py-4 text-white focus:border-white outline-none transition-colors placeholder:text-zinc-700 disabled:opacity-50"
-            />
-          </div>
-        </div>
-
-        <div className="space-y-3">
-          <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
-            Professional Testimony
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label className="text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-500">
+            Full Name & Role
           </label>
-          <textarea 
-            name="message"
-            rows={4}
-            placeholder="Share insights on our collaboration, technical proficiency, or project impact..."
+          <input 
+            type="text" 
+            name="name"
+            placeholder="e.g. Budi — Backend Partner"
             required
             disabled={status === "loading"}
-            className="w-full bg-transparent border-b border-zinc-800 py-4 text-white focus:border-white outline-none transition-colors resize-none placeholder:text-zinc-700 disabled:opacity-50"
+            className="w-full bg-black/50 border border-zinc-800/80 rounded-xl px-4 py-3 text-sm text-white focus:border-lime-400/50 focus:ring-1 focus:ring-lime-400/50 outline-none transition-all placeholder:text-zinc-700 disabled:opacity-50 font-sans"
           />
         </div>
 
-        <div className="flex items-center gap-6">
-          <button 
-            type="submit"
-            disabled={status === "loading" || status === "success"}
-            className="group inline-flex items-center gap-3 bg-white text-black px-10 py-5 rounded-full font-semibold hover:bg-zinc-200 transition-all duration-300 active:scale-[0.98] disabled:bg-zinc-800 disabled:text-zinc-500 disabled:cursor-not-allowed"
-          >
-            {status === "loading" ? (
-              <>
-                <span>Sending...</span>
-                <Loader2 size={18} className="animate-spin" />
-              </>
-            ) : status === "success" ? (
-              <>
-                <span>Sent Successfully</span>
-                <CheckCircle2 size={18} className="text-emerald-500" />
-              </>
-            ) : (
-              <>
-                <span>Send Testimony</span>
-                <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </>
-            )}
-          </button>
-
-          <AnimatePresence>
-            {status === "error" && (
-              <motion.span 
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="text-red-500 text-sm font-medium"
-              >
-                Failed to send. Please try again.
-              </motion.span>
-            )}
-          </AnimatePresence>
+        <div className="space-y-2">
+          <label className="text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-500">
+            Project Context
+          </label>
+          <input 
+            type="text" 
+            name="project"
+            placeholder="e.g. System Integration"
+            disabled={status === "loading"}
+            className="w-full bg-black/50 border border-zinc-800/80 rounded-xl px-4 py-3 text-sm text-white focus:border-lime-400/50 focus:ring-1 focus:ring-lime-400/50 outline-none transition-all placeholder:text-zinc-700 disabled:opacity-50 font-sans"
+          />
         </div>
-      </form>
-    </div>
+      </div>
+
+      <div className="space-y-2">
+        <label className="text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-500">
+          Professional Testimony
+        </label>
+        <textarea 
+          name="message"
+          rows={4}
+          placeholder="Share insights on our collaboration, technical proficiency, or project impact..."
+          required
+          disabled={status === "loading"}
+          className="w-full bg-black/50 border border-zinc-800/80 rounded-xl px-4 py-3 text-sm text-white focus:border-lime-400/50 focus:ring-1 focus:ring-lime-400/50 outline-none transition-all resize-none placeholder:text-zinc-700 disabled:opacity-50 font-sans custom-scrollbar"
+        />
+      </div>
+
+      <div className="flex flex-col sm:flex-row items-center gap-6 pt-2">
+        <button 
+          type="submit"
+          disabled={status === "loading" || status === "success"}
+          className="w-full sm:w-auto group inline-flex items-center justify-center gap-3 bg-zinc-100 text-black px-8 py-3.5 rounded-full font-mono text-[10px] font-bold uppercase tracking-widest hover:bg-lime-400 transition-all duration-300 active:scale-[0.98] disabled:bg-zinc-900 disabled:text-zinc-600 disabled:cursor-not-allowed"
+        >
+          {status === "loading" ? (
+            <>
+              <span>Transmitting...</span>
+              <Loader2 size={16} className="animate-spin" />
+            </>
+          ) : status === "success" ? (
+            <>
+              <span>Data Secured</span>
+              <CheckCircle2 size={16} className="text-lime-600" />
+            </>
+          ) : (
+            <>
+              <span>Submit Record</span>
+              <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </>
+          )}
+        </button>
+
+        <AnimatePresence>
+          {status === "error" && (
+            <motion.span 
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="text-red-400 font-mono text-[10px] uppercase tracking-widest font-bold"
+            >
+              System Error. Try Again.
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </div>
+    </form>
   );
 }

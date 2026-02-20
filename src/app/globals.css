@@ -1,13 +1,22 @@
 @import "tailwindcss";
 
 :root {
+  /* Warna latar belakang utama yang sangat gelap sesuai desain Bento */
   --background: #050505;
   --foreground: #ededed;
+  
+  /* Warna aksen lime untuk tombol dan ikon */
+  --lime-400: #a3e635;
+  
+  /* Warna border kartu agar terlihat subtle */
+  --card-border: rgba(39, 39, 42, 0.5);
+  --card-bg: #0a0a0a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-lime-400: var(--lime-400);
   
   /* Animasi Marquee yang Smooth */
   --animate-marquee: marquee var(--duration) linear infinite;
@@ -17,7 +26,7 @@
       transform: translateX(0);
     }
     to {
-      /* Menggunakan gap untuk kalkulasi pergeseran yang presisi agar tidak patah */
+      /* Kalkulasi presisi untuk loop yang tidak terputus */
       transform: translateX(calc(-50% - var(--gap) / 2));
     }
   }
@@ -29,5 +38,30 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Mencegah scroll horizontal akibat animasi marquee */
+  overflow-x: hidden;
 }
 
+/* Custom Scrollbar untuk bagian Peer Reviews agar tetap rapi */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--lime-400);
+}
+
+/* Efek seleksi teks yang sesuai tema */
+::selection {
+  background-color: var(--lime-400);
+  color: #000;
+}
