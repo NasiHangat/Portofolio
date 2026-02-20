@@ -87,7 +87,7 @@ export default function HomePage() {
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tighter mb-4 uppercase">
               MUHAMMAD<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-600">ABDUL AZIS</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-600">ABDUL AZIS.</span>
             </h1>
             
             <h2 className="text-xl md:text-2xl text-lime-400 font-medium tracking-tight mb-8 font-mono">
