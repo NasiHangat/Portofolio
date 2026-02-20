@@ -7,9 +7,7 @@ import { ArrowUpRight, Github, Linkedin, Cpu, Layout, User, Globe } from "lucide
 import PeerReviewForm from "@/components/PeerReviewForm";
 
 // --- GABUNGAN SEMUA SKILL DARI CV DENGAN ICON ---
-// Menggunakan skillicons.dev agar ikon stabil dan bertema gelap
-const allSkills = [
-  // Advanced (from CV)
+const advancedSkills = [
   { name: "Python", icon: "https://skillicons.dev/icons?i=python&theme=dark" },
   { name: "C++", icon: "https://skillicons.dev/icons?i=cpp&theme=dark" },
   { name: "Next.js", icon: "https://skillicons.dev/icons?i=next&theme=dark" },
@@ -17,18 +15,19 @@ const allSkills = [
   { name: "MySQL", icon: "https://skillicons.dev/icons?i=mysql&theme=dark" },
   { name: "Git", icon: "https://skillicons.dev/icons?i=git&theme=dark" },
   { name: "GitHub", icon: "https://skillicons.dev/icons?i=github&theme=dark" },
+];
 
-  // Intermediate (from CV)
+const intermediateSkills = [
   { name: "JavaScript", icon: "https://skillicons.dev/icons?i=js&theme=dark" },
   { name: "PHP", icon: "https://skillicons.dev/icons?i=php&theme=dark" },
   { name: "React", icon: "https://skillicons.dev/icons?i=react&theme=dark" },
   { name: "Tailwind CSS", icon: "https://skillicons.dev/icons?i=tailwind&theme=dark" },
   { name: "Laravel", icon: "https://skillicons.dev/icons?i=laravel&theme=dark" },
+  { name: "C#", icon: "https://skillicons.dev/icons?i=cs&theme=dark" },
+  { name: ".NET", icon: "https://skillicons.dev/icons?i=dotnet&theme=dark" },
   { name: "Go", icon: "https://skillicons.dev/icons?i=go&theme=dark" },
   { name: "FastAPI", icon: "https://skillicons.dev/icons?i=fastapi&theme=dark" },
   { name: "MongoDB", icon: "https://skillicons.dev/icons?i=mongodb&theme=dark" },
-  
-  // Tools Tambahan
   { name: "Postman", icon: "https://skillicons.dev/icons?i=postman&theme=dark" },
   { name: "VS Code", icon: "https://skillicons.dev/icons?i=vscode&theme=dark" },
 ];
@@ -134,7 +133,7 @@ export default function HomePage() {
           </a>
         </div>
 
-        {/* 3. EXPERTISE BLOCK (KEMBALI KE DESAIN IKON) */}
+        {/* 3. EXPERTISE BLOCK - DIPERBAIKI (MENGGUNAKAN ADVANCED & INTERMEDIATE) */}
         <div className="md:col-span-12 bg-[#0A0A0A] border border-zinc-800/50 rounded-3xl p-8 md:p-12">
           <div className="flex flex-col md:flex-row gap-12 items-start">
             <div className="md:w-1/3 shrink-0">
@@ -143,19 +142,49 @@ export default function HomePage() {
                 <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-mono">System Core</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tighter uppercase leading-none mb-4">TECHNICAL<br/>EXPERTISE</h2>
+              <p className="text-zinc-500 text-sm leading-relaxed mb-4">
+                A comprehensive arsenal of modern technologies utilized to architect robust applications.
+              </p>
               <p className="text-zinc-500 text-sm leading-relaxed">
-                A comprehensive arsenal of modern technologies utilized to architect robust applications. Strong foundation in <strong>Data Structures</strong> and <strong>System Design</strong>.
+                Strong foundation in <strong className="text-zinc-300">Data Structures</strong> and <strong className="text-zinc-300">System Design</strong>.
               </p>
             </div>
             
-            {/* Grid Ikon Tech Stack */}
-            <div className="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 w-full">
-              {allSkills.map((skill) => (
-                <div key={skill.name} className="flex items-center gap-3 p-3.5 bg-zinc-900/30 rounded-xl border border-zinc-800/50 hover:border-lime-400/40 transition-all group cursor-default">
-                  <img src={skill.icon} alt={skill.name} className="w-5 h-5 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
-                  <span className="text-xs text-zinc-400 font-medium group-hover:text-white transition-colors">{skill.name}</span>
+            {/* Grid Container */}
+            <div className="md:w-2/3 flex flex-col gap-10 w-full">
+              
+              {/* ADVANCED SKILLS */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-2.5 h-2.5 bg-lime-400 rounded-sm" />
+                  <h3 className="font-bold text-sm tracking-widest uppercase text-white font-mono">Advanced</h3>
                 </div>
-              ))}
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                  {advancedSkills.map((skill) => (
+                    <div key={skill.name} className="flex items-center gap-3 p-3.5 bg-zinc-900/30 rounded-xl border border-zinc-800/50 hover:border-lime-400/40 transition-all group cursor-default">
+                      <img src={skill.icon} alt={skill.name} className="w-5 h-5 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
+                      <span className="text-xs text-zinc-400 font-medium group-hover:text-white transition-colors">{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* INTERMEDIATE SKILLS */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-2.5 h-2.5 bg-white rounded-sm" />
+                  <h3 className="font-bold text-sm tracking-widest uppercase text-white font-mono">Intermediate</h3>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                  {intermediateSkills.map((skill) => (
+                    <div key={skill.name} className="flex items-center gap-3 p-3.5 bg-zinc-900/30 rounded-xl border border-zinc-800/50 hover:border-zinc-500/50 transition-all group cursor-default">
+                      <img src={skill.icon} alt={skill.name} className="w-5 h-5 object-contain opacity-40 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0" />
+                      <span className="text-xs text-zinc-500 font-medium group-hover:text-white transition-colors">{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
