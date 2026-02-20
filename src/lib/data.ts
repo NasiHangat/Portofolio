@@ -318,5 +318,51 @@ export const projects = [
       "Desain database relasional dan logika transaksi otomatis.",
     demoUrl: "",
     sourceCode: "https://github.com/dadunch/foodie-next"
+  },
+
+{
+    id: 8,
+    slug: "bakti45-sejahtera",
+    title: "Bakti45 Sejahtera",
+    category: "Web Development",
+    myRole: "Web Developer (Pro Bono)",
+    description:
+      "Website panti asuhan Yayasan Bakti45 Sejahtera yang dibangun secara sukarela untuk meningkatkan jangkauan digital yayasan.",
+    fullDescription:
+      "Sebagai bentuk kontribusi sosial (pro bono), saya mengembangkan dan mengelola platform digital utama untuk panti asuhan Yayasan Bakti45 Sejahtera. Proyek sukarela ini bertujuan membantu yayasan mendapatkan visibilitas online yang lebih luas agar mudah ditemukan oleh calon donatur potensial, dioptimalkan melalui penerapan praktik SEO teknis dan manajemen sitemap Google.",
+    process: [
+      {
+        stage: "Development & Setup",
+        details:
+          "Menginisiasi project environment menggunakan ekosistem npm dan membangun antarmuka website yang responsif serta mudah diakses."
+      },
+      {
+        stage: "SEO Integration",
+        details:
+          "Membuat arsitektur sitemap otomatis untuk memastikan setiap halaman informasi panti asuhan mudah ditelusuri oleh crawler mesin pencari."
+      },
+      {
+        stage: "Search Console Deployment",
+        details:
+          "Mendaftarkan dan memverifikasi domain pada Google Search Console untuk memantau trafik organik dan status indeksasi demi jangkauan yang lebih baik."
+      }
+    ],
+    tech: ["Next.js", "SEO", "Google Search Console"],
+    designTool: "Figma",
+    image: "/bakti45.png",
+    screenshots: [
+      "/bakti45.png",
+      "/bakti45 (1).png",
+      "/bakti45 (2).png",
+      "/bakti45 (3).png",
+      "/bakti45 (4).png",
+      "/bakti45 (5).png",
+    ],
+    challenge:
+      "Membangun infrastruktur digital dari nol untuk yayasan panti asuhan dengan memastikan standar teknis SEO terpenuhi agar mudah ditemukan oleh masyarakat luas.",
+    solution:
+      "Pengembangan website modern yang ringan dengan integrasi sitemap.xml dinamis serta pemantauan metrik secara berkala melalui dashboard Google Search Console.",
+    demoUrl: "https://bakti45sejahtera.my.id",
+    sourceCode: ""
   }
 ];

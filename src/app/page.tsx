@@ -3,29 +3,34 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "@/lib/data";
 import ProjectCard from "@/components/ProjectCard";
-import { FileText, ArrowUpRight, Github, Linkedin, Cpu, Layout, User, Globe } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Cpu, Layout, User, Globe } from "lucide-react";
 import PeerReviewForm from "@/components/PeerReviewForm";
 
-// Gabungan semua tech stack
+// --- GABUNGAN SEMUA SKILL DARI CV DENGAN ICON ---
+// Menggunakan skillicons.dev agar ikon stabil dan bertema gelap
 const allSkills = [
-  { name: "HTML5", icon: "https://cdn.simpleicons.org/html5/E34F26" },
-  { name: "CSS3", icon: "https://cdn.simpleicons.org/css3/1572B6" },
-  { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
-  { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
-  { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
-  { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/white" },
-  { name: "TailwindCSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
-  { name: "Laravel", icon: "https://cdn.simpleicons.org/laravel/FF2D20" },
-  { name: "Go", icon: "https://cdn.simpleicons.org/go/00ADD8" },
-  { name: "FastAPI", icon: "https://cdn.simpleicons.org/fastapi/009688" },
-  { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
-  { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1" },
-  { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
-  { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A24A" },
-  { name: "Git", icon: "https://cdn.simpleicons.org/git/F05032" },
-  { name: "GitHub", icon: "https://cdn.simpleicons.org/github/white" },
-  { name: "Postman", icon: "https://cdn.simpleicons.org/postman/FF6C37" },
-  { name: "VS Code", icon: "https://cdn.simpleicons.org/visualstudiocode/007ACC" },
+  // Advanced (from CV)
+  { name: "Python", icon: "https://skillicons.dev/icons?i=python&theme=dark" },
+  { name: "C++", icon: "https://skillicons.dev/icons?i=cpp&theme=dark" },
+  { name: "Next.js", icon: "https://skillicons.dev/icons?i=next&theme=dark" },
+  { name: "PostgreSQL", icon: "https://skillicons.dev/icons?i=postgres&theme=dark" },
+  { name: "MySQL", icon: "https://skillicons.dev/icons?i=mysql&theme=dark" },
+  { name: "Git", icon: "https://skillicons.dev/icons?i=git&theme=dark" },
+  { name: "GitHub", icon: "https://skillicons.dev/icons?i=github&theme=dark" },
+
+  // Intermediate (from CV)
+  { name: "JavaScript", icon: "https://skillicons.dev/icons?i=js&theme=dark" },
+  { name: "PHP", icon: "https://skillicons.dev/icons?i=php&theme=dark" },
+  { name: "React", icon: "https://skillicons.dev/icons?i=react&theme=dark" },
+  { name: "Tailwind CSS", icon: "https://skillicons.dev/icons?i=tailwind&theme=dark" },
+  { name: "Laravel", icon: "https://skillicons.dev/icons?i=laravel&theme=dark" },
+  { name: "Go", icon: "https://skillicons.dev/icons?i=go&theme=dark" },
+  { name: "FastAPI", icon: "https://skillicons.dev/icons?i=fastapi&theme=dark" },
+  { name: "MongoDB", icon: "https://skillicons.dev/icons?i=mongodb&theme=dark" },
+  
+  // Tools Tambahan
+  { name: "Postman", icon: "https://skillicons.dev/icons?i=postman&theme=dark" },
+  { name: "VS Code", icon: "https://skillicons.dev/icons?i=vscode&theme=dark" },
 ];
 
 export default function HomePage() {
@@ -82,7 +87,7 @@ export default function HomePage() {
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tighter mb-4 uppercase">
               MUHAMMAD<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-600">ABDUL AZIS.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-600">ABDUL AZIS</span>
             </h1>
             
             <h2 className="text-xl md:text-2xl text-lime-400 font-medium tracking-tight mb-8 font-mono">
@@ -124,13 +129,12 @@ export default function HomePage() {
               </div>
             </div>
             <div>
-              {/* Teks DOWNLOAD RÉSUMÉ menggunakan font Helvetica secara spesifik */}
-              <span className="text-black text-4xl lg:text-5xl font-black leading-[0.9] tracking-tighter italic font-['Helvetica_Neue',_Helvetica,_Arial,_sans-serif]">DOWNLOAD<br/>RESUME</span>
+              <span className="text-black text-4xl lg:text-5xl font-black leading-[0.9] tracking-tighter italic">DOWNLOAD<br/>RÉSUMÉ</span>
             </div>
           </a>
         </div>
 
-        {/* 3. EXPERTISE BLOCK */}
+        {/* 3. EXPERTISE BLOCK (KEMBALI KE DESAIN IKON) */}
         <div className="md:col-span-12 bg-[#0A0A0A] border border-zinc-800/50 rounded-3xl p-8 md:p-12">
           <div className="flex flex-col md:flex-row gap-12 items-start">
             <div className="md:w-1/3 shrink-0">
@@ -140,14 +144,15 @@ export default function HomePage() {
               </div>
               <h2 className="text-3xl font-bold tracking-tighter uppercase leading-none mb-4">TECHNICAL<br/>EXPERTISE</h2>
               <p className="text-zinc-500 text-sm leading-relaxed">
-                A comprehensive arsenal of modern technologies utilized to architect robust, scalable, and efficient applications.
+                A comprehensive arsenal of modern technologies utilized to architect robust applications. Strong foundation in <strong>Data Structures</strong> and <strong>System Design</strong>.
               </p>
             </div>
             
+            {/* Grid Ikon Tech Stack */}
             <div className="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 w-full">
               {allSkills.map((skill) => (
                 <div key={skill.name} className="flex items-center gap-3 p-3.5 bg-zinc-900/30 rounded-xl border border-zinc-800/50 hover:border-lime-400/40 transition-all group cursor-default">
-                  <img src={skill.icon} alt={skill.name} className="w-5 h-5 object-contain opacity-40 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0" />
+                  <img src={skill.icon} alt={skill.name} className="w-5 h-5 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
                   <span className="text-xs text-zinc-400 font-medium group-hover:text-white transition-colors">{skill.name}</span>
                 </div>
               ))}
@@ -166,7 +171,6 @@ export default function HomePage() {
               <h2 className="text-3xl font-bold tracking-tighter uppercase leading-none">SELECTED WORKS</h2>
             </div>
             
-            {/* Filter Buttons */}
             <div className="bg-zinc-950 p-1.5 rounded-full border border-zinc-800/50 flex flex-wrap gap-1">
               {categories.map(cat => {
                 const isSelected = filter === cat;
@@ -188,7 +192,6 @@ export default function HomePage() {
             </div>
           </div>
           
-          {/* Animated Grid */}
           <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project) => (
@@ -213,7 +216,7 @@ export default function HomePage() {
           )}
         </div>
 
-        {/* 6. PEER REVIEWS & FORM */}
+        {/* 5. PEER REVIEWS & FORM */}
         <div className="md:col-span-12 bg-[#0A0A0A] border border-zinc-800/50 rounded-3xl p-8 md:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
