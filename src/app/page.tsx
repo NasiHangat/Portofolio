@@ -129,7 +129,7 @@ export default function HomePage() {
               </div>
             </div>
             <div>
-              <span className="text-black text-4xl lg:text-5xl font-black leading-[0.9] tracking-tighter italic">DOWNLOAD<br/>RÉSUMÉ</span>
+              <span className="text-black text-4xl lg:text-5xl font-black leading-[0.9] tracking-tighter italic">DOWNLOAD<br/>RESUME</span>
             </div>
           </a>
         </div>
